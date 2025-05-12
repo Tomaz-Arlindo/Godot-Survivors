@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://hk6oegcl1p8i"]
+
+[ext_resource type="Script" uid="uid://crxqoiybcjlu1" path="res://Enemy/dummy_enemy.gd" id="1_32u52"]
+[ext_resource type="Texture2D" uid="uid://7akyuwj5niyf" path="res://Textures/Enemy/Dummy-enemy.png" id="2_2r6sc"]
+
+[node name="dummy-enemy" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_32u52")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_2r6sc")
+hframes = 3

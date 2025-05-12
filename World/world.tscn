@@ -1,0 +1,88 @@
+[gd_scene load_steps=10 format=3 uid="uid://c5t7034avp45i"]
+
+[ext_resource type="Texture2D" uid="uid://bh4fbsjjuum2b" path="res://Textures/Background/Sky.png" id="1_8a836"]
+[ext_resource type="PackedScene" uid="uid://cc525imf310bj" path="res://Player/dummy.tscn" id="2_8a836"]
+[ext_resource type="Texture2D" uid="uid://cy2ysfwsa0cyf" path="res://Textures/Background/B-builds.png" id="2_j8job"]
+[ext_resource type="Texture2D" uid="uid://bo374srw4u4gu" path="res://Textures/Background/Moon.png" id="2_yf0ba"]
+[ext_resource type="Texture2D" uid="uid://75yeh33j6yw1" path="res://Textures/Background/F-builds.png" id="3_3f78f"]
+[ext_resource type="Texture2D" uid="uid://b718btmmfc7ui" path="res://Textures/Background/Clouds.png" id="4_k8do8"]
+[ext_resource type="Texture2D" uid="uid://daev4e7wmpl3n" path="res://Textures/Background/Road.png" id="5_bkhv4"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_l402w"]
+normal = Vector2(0, 1)
+distance = -21.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j8job"]
+distance = -201.0
+
+[node name="World" type="Node2D"]
+
+[node name="Background" type="StaticBody2D" parent="."]
+
+[node name="Collision-Top" type="CollisionShape2D" parent="Background"]
+position = Vector2(-1, -130)
+shape = SubResource("WorldBoundaryShape2D_l402w")
+
+[node name="Collision-Bottom" type="CollisionShape2D" parent="Background"]
+position = Vector2(1, -175)
+shape = SubResource("WorldBoundaryShape2D_j8job")
+
+[node name="Parallax-Sky" type="Parallax2D" parent="Background"]
+repeat_size = Vector2(640, 0)
+repeat_times = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax-Sky"]
+position = Vector2(130, 1)
+texture = ExtResource("1_8a836")
+offset = Vector2(0, -130)
+
+[node name="Parallax-Moon" type="Parallax2D" parent="Background"]
+scroll_scale = Vector2(0, 1)
+repeat_size = Vector2(1280, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax-Moon"]
+position = Vector2(130, 1)
+texture = ExtResource("2_yf0ba")
+offset = Vector2(200, -130)
+
+[node name="Parallax-B-builds" type="Parallax2D" parent="Background"]
+scroll_scale = Vector2(2, 1)
+repeat_size = Vector2(1280, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax-B-builds"]
+position = Vector2(130, 1)
+texture = ExtResource("2_j8job")
+offset = Vector2(0, -80)
+
+[node name="Parallax-F-Builds" type="Parallax2D" parent="Background"]
+scroll_scale = Vector2(3, 1)
+repeat_size = Vector2(1280, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax-F-Builds"]
+position = Vector2(130, 1)
+texture = ExtResource("3_3f78f")
+offset = Vector2(0, -50)
+
+[node name="Parallax-Clouds" type="Parallax2D" parent="Background"]
+scroll_scale = Vector2(4, 1)
+repeat_size = Vector2(1280, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax-Clouds"]
+position = Vector2(130, 1)
+texture = ExtResource("4_k8do8")
+offset = Vector2(0, -50)
+
+[node name="Parallax-Road" type="Parallax2D" parent="Background"]
+repeat_size = Vector2(1280, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax-Road"]
+position = Vector2(130, 1)
+texture = ExtResource("5_bkhv4")
+
+[node name="Dummy" parent="." instance=ExtResource("2_8a836")]
+position = Vector2(0, -70)
