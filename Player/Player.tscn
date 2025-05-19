@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://cc525imf310bj"]
 
-[ext_resource type="Script" uid="uid://c3lrp3gi0hmuw" path="res://Player/dummy.gd" id="1_xmspm"]
+[ext_resource type="Script" uid="uid://c3lrp3gi0hmuw" path="res://Player/Player.gd" id="1_xmspm"]
 [ext_resource type="Texture2D" uid="uid://wr4jlqt2t3v4" path="res://Textures/Player/Dummy.png" id="2_0umox"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_stcs8"]
-radius = 13.0
-height = 46.0
+radius = 7.0
+height = 34.0
 
-[node name="Dummy" type="CharacterBody2D" groups=["player"]]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 motion_mode = 1
 script = ExtResource("1_xmspm")
 
@@ -16,8 +16,13 @@ texture = ExtResource("2_0umox")
 hframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
+position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_stcs8")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
+
+[node name="walkTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.2
+one_shot = true
