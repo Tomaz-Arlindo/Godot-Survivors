@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://lloath5yle5h"]
+
+[ext_resource type="Texture2D" uid="uid://bqeyahpp60spb" path="res://Menu.png" id="1_1l7mr"]
+[ext_resource type="PackedScene" uid="uid://c8uckvu3u2k7h" path="res://menus/Meubotaocustomizado.tscn" id="1_t6sbi"]
+[ext_resource type="Script" uid="uid://b52fa60ku8dc5" path="res://menus/Control.gd" id="2_851n0"]
+
+[node name="Control" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1l7mr")
+expand_mode = 2
+script = ExtResource("2_851n0")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+layout_mode = 2
+offset_left = 93.0
+offset_top = 297.0
+offset_right = 506.0
+offset_bottom = 337.0
+theme_override_constants/separation = 60
+
+[node name="Jogar" parent="BoxContainer" instance=ExtResource("1_t6sbi")]
+layout_mode = 2
+
+[node name="Opções" parent="BoxContainer" instance=ExtResource("1_t6sbi")]
+layout_mode = 2
+text = "Opções"
+
+[node name="Sair" parent="BoxContainer" instance=ExtResource("1_t6sbi")]
+layout_mode = 2
+text = "Sair
+"
+
+[connection signal="pressed" from="BoxContainer/Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="BoxContainer/Sair" to="." method="_on_sair_pressed"]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://cicho30w85fxg"]
+
+[ext_resource type="Texture2D" uid="uid://dy06eryaalfqm" path="res://Logo.png" id="1_mgn16"]
+[ext_resource type="FontFile" uid="uid://dwdow6rsf5gx1" path="res://fontes/upheavtt.ttf" id="2_r4umr"]
+
+[node name="Tela de Opçoes" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mgn16")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="MenuPrincipal" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_r4umr")
+theme_override_font_sizes/font_size = 46
+text = "Menu Principal
+"
