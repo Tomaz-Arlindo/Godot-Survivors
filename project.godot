@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="teste"
-run/main_scene="uid://c5t7034avp45i"
+run/main_scene="uid://bbg25roopyhhn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,7 +19,6 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=640
 window/size/viewport_height=360
-window/size/mode=2
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 window/handheld/orientation=1
