@@ -11,10 +11,10 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_l402w"]
 normal = Vector2(0, 1)
-distance = -21.0
+distance = -178.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j8job"]
-distance = -201.0
+distance = -363.0
 
 [node name="World" type="Node2D"]
 
@@ -78,6 +78,7 @@ texture = ExtResource("4_k8do8")
 offset = Vector2(0, -50)
 
 [node name="Parallax-Road" type="Parallax2D" parent="Background"]
+scroll_offset = Vector2(0, 9)
 repeat_size = Vector2(1280, 0)
 repeat_times = 2
 
@@ -86,10 +87,7 @@ position = Vector2(130, 1)
 texture = ExtResource("5_bkhv4")
 
 [node name="Player" parent="." instance=ExtResource("2_8a836")]
-position = Vector2(0, -70)
+position = Vector2(0, 110)
 
 [node name="dummy-enemy" parent="." instance=ExtResource("8_eidgh")]
 position = Vector2(168, -131)
-
-[node name="dummy-enemy2" parent="." instance=ExtResource("8_eidgh")]
-position = Vector2(302, -118)

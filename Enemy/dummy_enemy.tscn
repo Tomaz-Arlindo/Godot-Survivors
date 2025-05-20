@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://hk6oegcl1p8i"]
+[gd_scene load_steps=11 format=3 uid="uid://hk6oegcl1p8i"]
 
 [ext_resource type="Script" uid="uid://crxqoiybcjlu1" path="res://Enemy/dummy_enemy.gd" id="1_32u52"]
 [ext_resource type="Texture2D" uid="uid://7akyuwj5niyf" path="res://Textures/Enemy/Dummy-enemy.png" id="2_2r6sc"]
+[ext_resource type="PackedScene" uid="uid://c3cirgpopojvy" path="res://Utility/hurt_box.tscn" id="3_2r6sc"]
+[ext_resource type="PackedScene" uid="uid://df2g3f7a7lvsi" path="res://Utility/hit_box.tscn" id="4_32kck"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_32u52"]
-radius = 7.0
-height = 34.0
+radius = 5.0
+height = 28.0
 
 [sub_resource type="Animation" id="Animation_32u52"]
 resource_name = "walk"
@@ -45,6 +47,12 @@ _data = {
 &"walk": SubResource("Animation_32u52")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_32kck"]
+size = Vector2(24, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o17a4"]
+size = Vector2(18, 37)
+
 [node name="dummy-enemy" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_32u52")
@@ -61,3 +69,24 @@ shape = SubResource("CapsuleShape2D_32u52")
 libraries = {
 &"": SubResource("AnimationLibrary_32kck")
 }
+
+[node name="HurtBox" parent="." instance=ExtResource("3_2r6sc")]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="HurtBox" index="0"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_32kck")
+
+[node name="HitBox" parent="." instance=ExtResource("4_32kck")]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_o17a4")
+
+[connection signal="hurt" from="HurtBox" to="." method="_on_hurt_box_hurt"]
+
+[editable path="HurtBox"]
+[editable path="HitBox"]
