@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cc525imf310bj"]
 
 [ext_resource type="Script" uid="uid://c3lrp3gi0hmuw" path="res://Player/player.gd" id="1_xmspm"]
-[ext_resource type="Texture2D" uid="uid://wr4jlqt2t3v4" path="res://Textures/Player/Dummy.png" id="2_0umox"]
+[ext_resource type="Texture2D" uid="uid://wr4jlqt2t3v4" path="res://Textures/Player/Player.png" id="2_0umox"]
 [ext_resource type="PackedScene" uid="uid://c3cirgpopojvy" path="res://Utility/hurt_box.tscn" id="3_tok1r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_stcs8"]
