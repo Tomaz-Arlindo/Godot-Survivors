@@ -16,9 +16,9 @@ func _physics_process(_delta):
 	move_and_slide()
 	
 	if direction.x > 0.1:
-		sprite.flip_h = true
-	elif direction.x < -0.1:
 		sprite.flip_h = false
+	elif direction.x < -0.1:
+		sprite.flip_h = true
 
 
 func _on_hurt_box_hurt(damage):
