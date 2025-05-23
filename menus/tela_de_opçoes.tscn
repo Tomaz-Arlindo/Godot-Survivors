@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cicho30w85fxg"]
 
-[ext_resource type="Texture2D" uid="uid://dy06eryaalfqm" path="res://Logo.png" id="1_mgn16"]
+[ext_resource type="Texture2D" uid="uid://cdq8fj0tmkayx" path="res://Textures/GUI/Logo.png" id="1_mgn16"]
 [ext_resource type="FontFile" uid="uid://dwdow6rsf5gx1" path="res://fontes/upheavtt.ttf" id="2_r4umr"]
 
 [node name="Tela de Opçoes" type="TextureRect"]

@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbg25roopyhhn"]
+[gd_scene load_steps=5 format=3 uid="uid://bbg25roopyhhn"]
 
 [ext_resource type="Script" uid="uid://bohgcy7ohhekr" path="res://menus/Orquestrador.gd" id="1_d57mc"]
 [ext_resource type="PackedScene" uid="uid://cicho30w85fxg" path="res://menus/tela_de_opçoes.tscn" id="2_7mcqx"]
 [ext_resource type="PackedScene" uid="uid://lloath5yle5h" path="res://menus/MenuPrincipal.tscn" id="3_6lxoh"]
+[ext_resource type="Texture2D" uid="uid://cdq8fj0tmkayx" path="res://Textures/GUI/Logo.png" id="3_7mcqx"]
 
 [node name="Orquestrador" type="Node"]
 script = ExtResource("1_d57mc")
 
 [node name="TelaDeOpçoes" parent="." instance=ExtResource("2_7mcqx")]
+texture = ExtResource("3_7mcqx")
 
 [node name="Control" parent="." instance=ExtResource("3_6lxoh")]
 
