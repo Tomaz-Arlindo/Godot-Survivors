@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dfvx6aoywyla7" path="res://Textures/Items/spear.png" id="1_4eukt"]
 [ext_resource type="Script" uid="uid://ceahh12hsfogy" path="res://Player/Attack/spear.gd" id="1_811t3"]
-[ext_resource type="AudioStream" uid="uid://bfx1hw78ojrkq" path="res://Audio/SoundEffect/spear.mp3" id="3_fehy6"]
+[ext_resource type="AudioStream" uid="uid://go5twp542cx6" path="res://Audio/SoundEffect/laser-shot.mp3" id="3_fehy6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_811t3"]
 size = Vector2(7.07107, 24.0416)
@@ -20,7 +20,6 @@ texture = ExtResource("1_4eukt")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.499999, -0.5)
 rotation = -0.785398
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_811t3")
 
 [node name="Timer" type="Timer" parent="."]
@@ -30,7 +29,7 @@ autostart = true
 
 [node name="snd_play" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_fehy6")
-volume_db = -10.0
+volume_db = -20.0
 autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

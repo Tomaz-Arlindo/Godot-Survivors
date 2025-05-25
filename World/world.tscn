@@ -1,13 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://c5t7034avp45i"]
+[gd_scene load_steps=12 format=3 uid="uid://c5t7034avp45i"]
 
 [ext_resource type="Texture2D" uid="uid://bh4fbsjjuum2b" path="res://Textures/Background/Sky.png" id="1_8a836"]
-[ext_resource type="PackedScene" uid="uid://cc525imf310bj" path="res://Player/player.tscn" id="2_8a836"]
+[ext_resource type="PackedScene" uid="uid://cc525imf310bj" path="res://Player/Player.tscn" id="2_8a836"]
 [ext_resource type="Texture2D" uid="uid://cy2ysfwsa0cyf" path="res://Textures/Background/B-builds.png" id="2_j8job"]
 [ext_resource type="Texture2D" uid="uid://bo374srw4u4gu" path="res://Textures/Background/Moon.png" id="2_yf0ba"]
 [ext_resource type="Texture2D" uid="uid://75yeh33j6yw1" path="res://Textures/Background/F-builds.png" id="3_3f78f"]
 [ext_resource type="Texture2D" uid="uid://b718btmmfc7ui" path="res://Textures/Background/Clouds.png" id="4_k8do8"]
 [ext_resource type="Texture2D" uid="uid://daev4e7wmpl3n" path="res://Textures/Background/Road.png" id="5_bkhv4"]
 [ext_resource type="PackedScene" uid="uid://brvcbiids43hp" path="res://Utility/enemy_spawner.tscn" id="8_eidgh"]
+[ext_resource type="AudioStream" uid="uid://cidyidmoo2u8d" path="res://Audio/SoundEffect/musica 1.mp3" id="9_oe8m4"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_l402w"]
 normal = Vector2(0, 1)
@@ -92,3 +93,8 @@ texture = ExtResource("5_bkhv4")
 position = Vector2(-5, 106)
 
 [node name="EnemySpawner" parent="." instance=ExtResource("8_eidgh")]
+
+[node name="som de fundo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_oe8m4")
+volume_db = -20.0
+autoplay = true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dlkowakgpaenb"
+path="res://.godot/imported/start game.mp3-ebbb10b581f80c05549ad46051dd3e9f.mp3str"
+
+[deps]
+
+source_file="res://Audio/SoundEffect/start game.mp3"
+dest_files=["res://.godot/imported/start game.mp3-ebbb10b581f80c05549ad46051dd3e9f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

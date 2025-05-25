@@ -1,20 +1,33 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbg25roopyhhn"]
+[gd_scene load_steps=7 format=3 uid="uid://bbg25roopyhhn"]
 
 [ext_resource type="Script" uid="uid://bohgcy7ohhekr" path="res://menus/Orquestrador.gd" id="1_d57mc"]
 [ext_resource type="PackedScene" uid="uid://cicho30w85fxg" path="res://menus/tela_de_opçoes.tscn" id="2_7mcqx"]
 [ext_resource type="PackedScene" uid="uid://lloath5yle5h" path="res://menus/MenuPrincipal.tscn" id="3_6lxoh"]
-[ext_resource type="Texture2D" uid="uid://cdq8fj0tmkayx" path="res://Textures/GUI/Logo.png" id="3_7mcqx"]
+[ext_resource type="AudioStream" uid="uid://dbsddibfvorn5" path="res://Audio/SoundEffect/musica do menu.mp3" id="4_7mcqx"]
+[ext_resource type="AudioStream" uid="uid://dlkowakgpaenb" path="res://Audio/SoundEffect/start game.mp3" id="4_n2dw8"]
+[ext_resource type="Script" uid="uid://bvb80evv0aics" path="res://menus/bg_music.gd" id="5_6lxoh"]
 
 [node name="Orquestrador" type="Node"]
 script = ExtResource("1_d57mc")
 
 [node name="TelaDeOpçoes" parent="." instance=ExtResource("2_7mcqx")]
-texture = ExtResource("3_7mcqx")
 
 [node name="Control" parent="." instance=ExtResource("3_6lxoh")]
 
+[node name="start_mp3" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("4_n2dw8")
+volume_db = -20.0
+
+[node name="bg music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_7mcqx")
+volume_db = -20.0
+autoplay = true
+script = ExtResource("5_6lxoh")
+
 [connection signal="pressed" from="TelaDeOpçoes/MarginContainer/VBoxContainer/MenuPrincipal" to="." method="_on_menu_principal_pressed"]
+[connection signal="pressed" from="TelaDeOpçoes/MarginContainer/VBoxContainer/musica" to="." method="_on_musica_pressed"]
 [connection signal="pressed" from="Control/BoxContainer/Opções" to="." method="_on_opções_pressed"]
+[connection signal="finished" from="bg music" to="bg music" method="_on_finished"]
 
 [editable path="TelaDeOpçoes"]
 [editable path="Control"]
