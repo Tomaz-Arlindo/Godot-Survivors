@@ -53,6 +53,8 @@ size = Vector2(34, 24)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o17a4"]
 
 [node name="Enemy" type="CharacterBody2D"]
+collision_layer = 5
+collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_eqilm")
 
